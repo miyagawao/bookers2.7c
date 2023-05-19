@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   
   has_many :books, dependent: :destroy
+  has_many :group_users
+  has_many :groups, through: :group_users
   has_many :book_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :user_rooms
